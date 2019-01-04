@@ -12,9 +12,13 @@ public class PlayerStateController : MonoBehaviour
 		landing,
 		falling,
 		kill,
-		resurrect
+		resurrect,
+		firingWeapon,
+		_stateCount
 	}
 		
+	public static float[] stateDelayTimer = new float[(int)playerStates._stateCount];
+	
 	public delegate void playerStateHandler(PlayerStateController.playerStates newState);
 	public static event playerStateHandler onStateChange;
 	
@@ -40,6 +44,20 @@ public class PlayerStateController : MonoBehaviour
 		{
 			if(onStateChange != null)
 				onStateChange(PlayerStateController.playerStates.idle);
+		}
+
+		float jump = Input.GetAxis("Jump");
+		if(jump > 0.0f)
+		{
+			if(onStateChange != null)
+				onStateChange(PlayerStateController.playerStates.jump);
+		}
+		
+		float firing = Input.GetAxis("Fire1");
+		if(firing > 0.0f)
+		{
+			if(onStateChange != null)
+				onStateChange(PlayerStateController.playerStates.firingWeapon);
 		}
 	}
 }

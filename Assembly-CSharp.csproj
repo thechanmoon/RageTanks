@@ -60,6 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\DeathTriggerScript.cs" />
+    <Compile Include="Assets\Scripts\DestroyOnCollision.cs" />
+    <Compile Include="Assets\Scripts\PlayerBulletController.cs" />
+    <Compile Include="Assets\Scripts\PlayerColliderListener.cs" />
     <Compile Include="Assets\Scripts\PlayerStateController.cs" />
     <Compile Include="Assets\Scripts\PlayerStateListener.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
